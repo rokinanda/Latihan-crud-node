@@ -1,0 +1,155 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Bank",
+    "description": "Daftar API Bank",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001",
+      "description": "localhost"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Nasabah",
+      "description": "localhost"
+    }
+  ],
+  "paths": {
+    "/nasabah": {
+      "get": {
+        "tags": [
+          "Nasabah"
+        ],
+        "summary": "Get All Nasabah",
+        "description": "Mengambil semua data nasabah",
+        "responses": {
+          "200": {
+            "description": "Sukses"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Nasabah"
+        ],
+        "summary": "Post Nasabah",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nama": {
+                    "type": "string"
+                  },
+                  "nohp": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sukses"
+          }
+        }
+      }
+    },
+    "/nasabah/{nama}": {
+      "get": {
+        "tags": [
+          "Nasabah"
+        ],
+        "summary": "Get One Nasabah",
+        "description": "Mengambil semua data nasabah",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "nama",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Nama Nasabah"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sukses"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Nasabah"
+        ],
+        "summary": "Delete One Nasabah",
+        "description": "Menghapus data nasabah",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "nama",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Nama Nasabah"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sukses"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Nasabah"
+        ],
+        "summary": "Update One Nasabah",
+        "description": "Mengupdate data nasabah",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "nama",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Nama Nasabah"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nama": {
+                    "type": "string"
+                  },
+                  "nohp": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sukses"
+          }
+        }
+      }
+    }
+  }
+}
